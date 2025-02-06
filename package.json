@@ -1,0 +1,22 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"cd backend && npm start" 
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAIF-YASEEN/test-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SAIF-YASEEN/test-repo/issues"
+  },
+  "homepage": "https://github.com/SAIF-YASEEN/test-repo#readme",
+  "description": ""
+}
