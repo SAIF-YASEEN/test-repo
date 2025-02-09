@@ -4,8 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"cd backend && npm start" 
-},
+    "start": "cd backend && npm start",
+    "dev": "nodemon app.js"
+
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SAIF-YASEEN/test-repo.git"
@@ -18,5 +20,8 @@
     "url": "https://github.com/SAIF-YASEEN/test-repo/issues"
   },
   "homepage": "https://github.com/SAIF-YASEEN/test-repo#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }

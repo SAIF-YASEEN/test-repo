@@ -1,12 +1,13 @@
 // server/db.js
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 /**
  * @description Connect to MongoDB using Mongoose
  */
 const connectDB = async () => {
-  const uri = "mongodb+srv://saifurrehman0708:saifurrehman0708@saifcluster.dcw3i.mongodb.net/?retryWrites=true&w=majority&appName=SAIFCLUSTER";
 
+  const uri = process.env.MONGO_URL;
   try {
     await mongoose.connect(uri, {
       useNewUrlParser: true,

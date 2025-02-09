@@ -11,7 +11,7 @@ const User = require("./models/User");
 const app = express();
 const Profile = require("./models/Profile"); // Correctly import the Profile model
 
-const port = 5000;
+const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use("/", MainRouter);
@@ -21,6 +21,10 @@ app.use("/api/auth", ForgotPasswordRouter);
 app.use("/", profileRoute);
 app.use("/api/users", userRoutes);
 // Example: API route for fetching user details
+
+app.get("/", (req, res) => {
+  res.send("get page");
+});
 app.get("/api/users/:email", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.params.email }).select(
@@ -148,7 +152,7 @@ app.get("/profile/:email", async (req, res) => {
   }
 });
 // Email validation endpoint
-app.get('/validate-email', async (req, res) => {
+app.get("/validate-email", async (req, res) => {
   const { email } = req.query;
 
   try {
@@ -163,6 +167,6 @@ app.get('/validate-email', async (req, res) => {
 });
 connectDB();
 
-app.listen(port, () => {
-  console.log(`Backend server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Backend server running at http://localhost:${PORT}`);
 });
